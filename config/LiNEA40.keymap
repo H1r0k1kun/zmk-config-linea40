@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,
+            //スクロール方向を逆転,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -176,10 +176,10 @@
 
         Mouse {
             bindings = <
-&kp ESCAPE      &kp F2           &trans            &trans             &trans                        &trans        &kp BACKSPACE  &kp DELETE             &trans                &trans
-&kp TAB         &kp PERCENT      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LS(N8)                    &kp C_MUTE    &kp LS(LBKT)   &kp RIGHT_BRACKET      &kp BACKSLASH         &kp EQUAL
-&kp LEFT_SHIFT  &kp EXCLAMATION  &kp APOS          &kp BACKSLASH      &kp LS(N9)                    &kp KP_EQUAL  &kp INT3       &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &kp LS(INT1)
-&trans          &trans           &kp SEMI          &trans             &trans      &trans    &trans  &trans                       &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LS(QUESTION)
+&kp ESCAPE      &kp F2           &trans            &trans             &trans                        &trans    &kp BACKSPACE   &kp DELETE      &trans           &trans
+&kp TAB         &kp PERCENT      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LS(N8)                    &trans    &mkp MB1        &lt 4 UP_ARROW  &mkp MB2         &trans
+&kp LEFT_SHIFT  &kp EXCLAMATION  &kp APOS          &kp BACKSLASH      &kp LS(N9)                    &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&trans          &trans           &kp SEMI          &trans             &trans      &trans    &trans  &trans                    &trans          &trans           &trans
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
