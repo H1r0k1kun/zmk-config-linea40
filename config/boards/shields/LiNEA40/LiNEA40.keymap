@@ -6,6 +6,7 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+
 #define MOUSE 1
 #define MARK 2
 #define CURSOR 3
