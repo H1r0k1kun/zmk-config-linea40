@@ -132,6 +132,30 @@
             #binding-cells = <1>;
             toggle-mode = "off";
         };
+td_mhenkan: tap_dance_mhenkan {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            // ダブルタップとみなす時間
+            tapping-term-ms = <220>;
+
+            // 1タップ → 無変換, 2タップ → 変換
+            bindings = <
+                &kp INT_MUHENKAN
+                &kp INT_HENKAN
+            >;
+        };
+
+        lt_mhenkan: layer_tap_mhenkan {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <1>;   // レイヤー番号を1つ渡す
+            flavor = "tap-preferred";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <0>;
+
+            // hold側: &mo でレイヤー有効
+            // tap側: さっきの tap-dance
+            bindings = <&mo>, <&td_mhenkan>;
+        };
     };
 
     macros {
