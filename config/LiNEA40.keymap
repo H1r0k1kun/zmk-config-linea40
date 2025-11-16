@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -257,14 +257,14 @@
 &kp MINUS          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS                         &trans                   &kp BACKSPACE   &kp DELETE    &trans           &trans
 &kp NUMBER_0       &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LS(SEMI)                     &kp LG(BACKSLASH)        &mkp MB1        &kp UP_ARROW  &mkp MB2         &trans
 &mt LEFT_SHIFT N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LS(MINUS)                    &kp LS(INTERNATIONAL_1)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &trans
-&trans             &trans        &kp PERIOD    &trans        &trans         &trans    &trans  &trans                                   &trans        &trans           &trans
+&trans             &trans        &kp PERIOD    &trans        &trans         &trans    &trans  &trans                                   &kp HOME      &kp END          &trans
             >;
         };
 
         Function {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &trans                    &trans                   &kp BACKSPACE   &kp DELETE    &trans           &trans
-&trans  &kp F4  &kp F5  &kp F6  &trans                    &kp LG(BACKSLASH)        &mkp MB1        &kp UP_ARROW  &mkp MB2         &trans
+&trans  &kp F7  &kp F8  &kp F9  &trans                    &bt3_msol                &kp BACKSPACE   &kp DELETE    &trans           &trans
+&trans  &kp F4  &kp F5  &kp F6  &trans                    &bt4_kd                  &mkp MB1        &kp UP_ARROW  &bt1_ipad        &trans
 &trans  &kp F1  &kp F2  &kp F3  &trans                    &kp LS(INTERNATIONAL_1)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                   &trans        &trans           &trans
             >;
@@ -272,10 +272,10 @@
 
         ZMK {
             bindings = <
-&trans      &trans        &trans        &trans        &trans                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&kp N0      &kp NUMBER_4  &trans        &trans        &trans                         &trans          &trans        &trans        &trans        &trans
-&bt BT_CLR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans                         &trans          &trans        &trans        &trans        &trans
-&trans      &trans        &trans        &trans        &trans  &trans    &bootloader  &studio_unlock                &trans        &trans        &trans
+&trans      &trans        &trans        &trans        &trans                         &bt0_mac        &bt1_ipad  &bt2_ipad  &bt3_msol  &bt4_kd
+&kp N0      &kp NUMBER_4  &trans        &trans        &trans                         &trans          &trans     &trans     &trans     &trans
+&bt BT_CLR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans                         &trans          &trans     &trans     &trans     &all_disc
+&trans      &trans        &trans        &trans        &trans  &trans    &bootloader  &studio_unlock             &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
@@ -283,8 +283,8 @@
 
         iPad_tcc {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                           &trans     &kp D  &kp I   &trans          &trans
-&trans  &trans  &trans  &trans  &trans                           &trans     &kp S  &kp K   &kp LEFT_SHIFT  &trans
+&trans  &trans  &trans  &trans  &trans                           &bt3_msol  &kp D  &kp I   &trans          &trans
+&trans  &trans  &trans  &trans  &trans                           &bt4_kd    &kp S  &kp K   &kp LEFT_SHIFT  &trans
 &trans  &trans  &trans  &trans  &trans                           &kp LS(X)  &kp N  &kp J   &trans          &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp ENTER         &trans  &trans          &trans
             >;
