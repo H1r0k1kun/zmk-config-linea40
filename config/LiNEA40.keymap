@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -126,8 +126,73 @@
         bt0_mac: bt0_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog_off 0 &kp &kp>;
+            bindings =
+                <&tog_off 0 &tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 0>,
+                <&macro_wait_time 500>,
+                <&tog_on 0>;
+
             label = "BT0_MAC";
+        };
+
+        bt1_ipad: bt1_ipad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 0 &tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 500>,
+                <&tog_on 1>;
+
+            label = "BT1_IPAD";
+        };
+
+        bt2_ipad: bt2_ipad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 0 &tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 2>,
+                <&macro_wait_time 500>,
+                <&tog_on 1>;
+
+            label = "BT2_IPAD";
+        };
+
+        bt3_msol: bt3_msoll_ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 0 &tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 3>,
+                <&macro_wait_time 500>,
+                <&tog_on 2>;
+
+            label = "BT3_MSOLL_";
+        };
+
+        bt4_kd: bt4_kd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 0 &tog_off 1 &tog_off 2>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 4>,
+                <&macro_wait_time 500>,
+                <&tog_on 2>;
+
+            label = "BT4_KD";
+        };
+
+        all_disc: all_disc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+            label = "ALL_DISC";
         };
     };
 
