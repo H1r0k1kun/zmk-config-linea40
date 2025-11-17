@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -123,9 +123,13 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MHENKAN";
             #binding-cells = <0>;
+
             // ダブルタップ判定時間（お好みで）
+
             tapping-term-ms = <220>;
+
             // 1タップ → 無変換, 2タップ → 変換
+
             bindings = <
                 &kp INT_MUHENKAN
                 &kp INT_HENKAN
@@ -137,13 +141,17 @@
         lt_mhenkan: layer_tap_mhenkan {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_MHENKAN";
+
             // ※ hold-tap は #binding-cells = <2> 固定
+
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <180>;
             quick-tap-ms = <0>;
+
             // hold側: &mo (レイヤー一時有効)
             // tap側: さっきの tap-dance
+
             bindings = <&mo>, <&td_mhenkan>;
         };
 
@@ -154,8 +162,10 @@
             flavor = "tap-preferred";
             tapping-term-ms = <180>;
             quick-tap-ms = <0>;
+
             // hold 側: Alt+Layer3 マクロ
             // tap 側: 通常の &kp
+
             bindings = <&alt_layer3>, <&kp>;
         };
     };
@@ -238,12 +248,16 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
+
             // 押したときに layer3 + LEFT_ALT を押し、
             // 離したときに両方離す
+
             bindings =
-                <&macro_press &mo 3 &kp LEFT_ALT>,
+                <&macro_press>,
+                <&mo 3 &kp LEFT_ALT>,
                 <&macro_pause_for_release>,
-                <&macro_release &mo 3 &kp LEFT_ALT>;
+                <&macro_release>,
+                <&mo 3 &kp LEFT_ALT>;
         };
     };
 
@@ -274,9 +288,9 @@
 
         Windows {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R   &kp T                                                    &kp Y        &kp U  &kp I      &kp O     &kp P
-&lt 4 A           &kp S         &kp D         &kp F   &kp G                                                    &kp H        &kp J  &lt 3 K    &kp L     &lt 6 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V   &kp B                                                    &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
+&kp Q             &kp W                &kp E         &kp R   &kp T                                                    &kp Y        &kp U  &kp I      &kp O     &kp P
+&lt 4 A           &kp S                &kp D         &kp F   &kp G                                                    &kp H        &kp J  &lt 3 K    &kp L     &lt 6 MINUS
+&mt LEFT_SHIFT Z  &kp X                &kp C         &kp V   &kp B                                                    &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
 &kp LEFT_CONTROL  &alt3_ht 0 LEFT_ALT  &kp LEFT_GUI  &trans  &mt LEFT_SHIFT SPACE  &lt 3 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
             >;
 
@@ -288,7 +302,7 @@
 &kp ESCAPE      &kp F2           &trans            &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)                    &trans    &kp BACKSPACE   &kp DELETE      &trans           &trans
 &kp TAB         &kp PERCENT      &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &kp LS(N8)                             &trans    &mkp MB1        &lt 4 UP_ARROW  &mkp MB2         &trans
 &kp LEFT_SHIFT  &kp EXCLAMATION  &kp APOS          &kp BACKSLASH       &kp LS(N9)                             &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&trans          &trans           &kp SEMI          &trans              &trans               &trans    &trans  &trans                    &trans          &trans           &trans
+&trans          &trans           &kp SEMI          &trans              &kp TAB              &trans    &trans  &trans                    &trans          &trans           &trans
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
