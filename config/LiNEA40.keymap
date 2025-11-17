@@ -157,6 +157,7 @@
             // hold 側: Alt+Layer3 マクロ
             // tap 側: 通常の &kp
             bindings = <&alt_layer3>, <&kp>;
+        };
     };
 
     macros {
