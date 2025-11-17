@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -87,23 +87,9 @@
             layers = <0>;
         };
 
-        space {
-            bindings = <&kp SPACE>;
-            key-positions = <34 35>;
-            timeout-ms = <100>;
-            layers = <0 2 1>;
-        };
-
-        space2 {
-            bindings = <&kp SPACE>;
-            key-positions = <13 12>;
-            timeout-ms = <100>;
-            layers = <0 1 2>;
-        };
-
-        space3 {
-            bindings = <&kp SPACE>;
-            key-positions = <34 13>;
+        muhenkan {
+            bindings = <&kp INT_MUHENKAN>;
+            key-positions = <35 10>;
         };
     };
 
@@ -132,14 +118,18 @@
             #binding-cells = <1>;
             toggle-mode = "off";
         };
+
         td_mhenkan: tap_dance_mhenkan {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MHENKAN";
             #binding-cells = <0>;
+
             // ダブルタップ判定時間（お好みで）
+
             tapping-term-ms = <220>;
 
             // 1タップ → 無変換, 2タップ → 変換
+
             bindings = <
                 &kp INT_MUHENKAN
                 &kp INT_HENKAN
@@ -153,14 +143,15 @@
             label = "LAYER_TAP_MHENKAN";
 
             // ※ hold-tap は #binding-cells = <2> 固定
-            #binding-cells = <2>;
 
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <180>;
             quick-tap-ms = <0>;
 
             // hold側: &mo (レイヤー一時有効)
             // tap側: さっきの tap-dance
+
             bindings = <&mo>, <&td_mhenkan>;
         };
     };
@@ -247,7 +238,7 @@
 &kp Q         &kp W         &kp E             &kp R   &kp T                                                    &kp Y        &kp U  &kp I      &kp O     &kp P
 &kp A         &kp S         &kp D             &kp F   &kp G                                                    &kp H        &kp J  &lt 3 K    &kp L     &lt 8 MINUS
 &kp Z         &kp X         &kp C             &kp V   &kp B                                                    &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &mt LEFT_SHIFT SPACE  &lt_mhenkan 3 0    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &mt LEFT_SHIFT SPACE  &lt 3 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -266,10 +257,10 @@
 
         Windows {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R   &kp T                                                           &kp Y        &kp U  &kp I      &kp O     &kp P
-&kp A             &kp S         &kp D         &kp F   &kp G                                                           &kp H        &kp J  &lt 3 K    &kp L     &lt 6 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V   &kp B                                                           &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
-&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans  &mt LEFT_SHIFT SPACE  &lt_mhenkan 3 0    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
+&kp Q             &kp W         &kp E         &kp R   &kp T                                                    &kp Y        &kp U  &kp I      &kp O     &kp P
+&lt 4 A           &kp S         &kp D         &kp F   &kp G                                                    &kp H        &kp J  &lt 3 K    &kp L     &lt 6 MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V   &kp B                                                    &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans  &mt LEFT_SHIFT SPACE  &lt 3 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -288,10 +279,10 @@
 
         Scroll {
             bindings = <
-&trans  &trans  &trans  &trans              &trans                                 &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans              &trans                                 &trans  &mkp MB1  &trans  &mkp MB2  &trans
-&trans  &trans  &trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)                    &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans              &trans               &trans    &trans  &trans            &trans  &trans    &trans
+&trans  &trans  &trans  &trans              &trans                                           &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans              &trans                                           &trans  &mkp MB1  &trans  &mkp MB2  &trans
+&trans  &trans  &trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)                              &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans              &trans               &kp INT_MUHENKAN    &trans  &trans            &trans  &trans    &trans
             >;
         };
 
