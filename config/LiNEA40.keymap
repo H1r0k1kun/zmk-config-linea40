@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -302,7 +302,7 @@
 &kp ESCAPE      &kp F2           &trans            &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)                    &trans    &kp BACKSPACE   &kp DELETE      &trans           &trans
 &kp TAB         &kp PERCENT      &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &kp LS(N8)                             &trans    &mkp MB1        &lt 4 UP_ARROW  &mkp MB2         &trans
 &kp LEFT_SHIFT  &kp EXCLAMATION  &kp APOS          &kp BACKSLASH       &kp LS(N9)                             &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&trans          &trans           &kp SEMI          &trans              &kp TAB              &trans    &trans  &trans                    &trans          &trans           &trans
+&trans          &trans           &kp SEMI          &trans              &kp TAB              &trans    &trans  &trans                    &kp PG_UP       &kp PAGE_DOWN    &trans
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -352,15 +352,6 @@
 &trans  &trans  &trans  &trans  &trans                           &bt4_kd    &kp S  &kp K   &kp LEFT_SHIFT  &trans
 &trans  &trans  &trans  &trans  &trans                           &kp LS(X)  &kp N  &kp J   &trans          &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp ENTER         &trans  &trans          &trans
-            >;
-        };
-
-        layer_9 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans  &trans  &trans
             >;
         };
     };
