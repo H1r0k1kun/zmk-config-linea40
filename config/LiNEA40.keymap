@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -266,10 +266,10 @@
 
         Mac {
             bindings = <
-&kp Q         &kp W         &kp E             &kp R   &kp T                                                       &kp Y        &kp U  &kp I      &kp O     &kp P
-&kp A         &kp S         &kp D             &kp F   &kp G                                                       &kp H        &kp J  &lt 4 K    &kp L     &lt 8 MINUS
-&kp Z         &kp X         &kp C             &kp V   &kp B                                                       &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 INT_HENKAN    &kp SPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
+&kp Q         &kp W         &kp E             &kp R                        &kp T                                           &kp Y        &kp U  &kp I      &kp O     &kp P
+&kp A         &kp S         &kp D             &kp F                        &kp G                                           &kp H        &kp J  &lt 4 K    &kp L     &lt 8 MINUS
+&kp Z         &kp X         &kp C             &kp V                        &kp B                                           &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 4 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -277,10 +277,10 @@
 
         iPad {
             bindings = <
-&kp Q         &kp W         &kp E             &kp R   &kp T                                                     &kp Y        &kp U  &kp I      &kp O     &kp P
-&kp A         &kp S         &kp D             &kp F   &kp G                                                     &kp H        &kp J  &lt 4 K    &kp L     &lt 8 MINUS
-&kp Z         &kp X         &kp C             &kp V   &kp B                                                     &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &mt LEFT_SHIFT LANGUAGE_2  &lt 3 LANGUAGE_1    &kp SPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
+&kp Q         &kp W         &kp E             &kp R                      &kp T                                           &kp Y        &kp U  &kp I      &kp O     &kp P
+&kp A         &kp S         &kp D             &kp F                      &kp G                                           &kp H        &kp J  &lt 4 K    &kp L     &lt 8 MINUS
+&kp Z         &kp X         &kp C             &kp V                      &kp B                                           &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &mt LEFT_SHIFT LANGUAGE_2  &lt 3 SPACE  &lt 4 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -288,10 +288,10 @@
 
         Windows {
             bindings = <
-&kp Q             &kp W                &kp E         &kp R   &kp T                                                       &kp Y        &kp U  &kp I      &kp O     &kp P
-&lt 4 A           &kp S                &kp D         &kp F   &kp G                                                       &kp H        &kp J  &lt 4 K    &kp L     &lt 6 MINUS
-&mt LEFT_SHIFT Z  &kp X                &kp C         &kp V   &kp B                                                       &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
-&kp LEFT_CONTROL  &alt3_ht 0 LEFT_ALT  &kp LEFT_GUI  &trans  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 INT_HENKAN    &kp SPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
+&kp Q             &kp W                &kp E         &kp R                        &kp T                                           &kp Y        &kp U  &kp I      &kp O     &kp P
+&lt 4 A           &kp S                &kp D         &kp F                        &kp G                                           &kp H        &kp J  &lt 4 K    &kp L     &lt 6 MINUS
+&mt LEFT_SHIFT Z  &kp X                &kp C         &kp V                        &kp B                                           &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
+&kp LEFT_CONTROL  &alt3_ht 0 LEFT_ALT  &kp LEFT_GUI  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 4 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
