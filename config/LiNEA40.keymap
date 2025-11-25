@@ -1,4 +1,5 @@
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <scroll-snap.dtsi>
@@ -6,7 +7,6 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <mouse-gesture.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -18,6 +18,7 @@
 #define WIRELESS 7
 
 /* スクロールスナップ設定 */
+
 &zip_scroll_snap {
     x-threshold = <5 8>;
     y-threshold = <8 5>;
@@ -30,6 +31,7 @@
 };
 
 /* マウスジェスチャー */
+
 &zip_mouse_gesture {
     stroke-size = <150>;
     enable-eager-mode;
@@ -70,9 +72,8 @@
     };
 };
 
-
-
 //mouse cursol
+
 &mmv {
     delay-ms = <20>;
     trigger-period-ms = <5>;
@@ -81,6 +82,7 @@
 };
 
 //mouse scroll
+
 &msc {
     delay-ms = <3>;
     trigger-period-ms = <3>;
@@ -345,10 +347,10 @@
 
         Windows {
             bindings = <
-&kp Q             &kp W                &kp E         &kp R                        &kp T                                           &kp Y        &kp U  &kp I      &kp O     &kp P
+&kp Q             &kp W                &kp E         &kp R                        &kp T                                           &kp Y        &kp U                  &kp I      &kp O     &kp P
 &lt 4 A           &kp S                &kp D         &kp F                        &kp G                                           &kp H        &mouse_gesture_kp 0 J  &lt 4 K    &kp L     &lt 6 MINUS
-&mt LEFT_SHIFT Z  &kp X                &kp C         &kp V                        &kp B                                           &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
-&kp LEFT_CONTROL  &alt3_ht 0 LEFT_ALT  &kp LEFT_GUI  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 4 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
+&mt LEFT_SHIFT Z  &kp X                &kp C         &kp V                        &kp B                                           &kp N        &kp M                  &kp COMMA  &kp DOT   &kp SLASH
+&kp LEFT_CONTROL  &alt3_ht 0 LEFT_ALT  &kp LEFT_GUI  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 4 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER                         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -359,7 +361,7 @@
 &kp ESCAPE      &kp F2           &trans            &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)                    &trans    &kp BACKSPACE   &kp DELETE      &trans           &trans
 &kp TAB         &kp PERCENT      &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &kp LS(N8)                             &trans    &mkp MB1        &lt 4 UP_ARROW  &mkp MB2         &trans
 &kp LEFT_SHIFT  &kp EXCLAMATION  &kp APOS          &kp BACKSLASH       &kp LS(N9)                             &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&trans          &trans           &kp SEMI          &trans              &kp TAB              &trans    &trans  &trans                    &kp PG_UP       &kp PAGE_DOWN    &trans
+&trans          &trans           &kp SEMI          &trans              &kp TAB              &trans    &trans  &trans                    &kp LC(HOME)    &kp LC(END)      &trans
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
