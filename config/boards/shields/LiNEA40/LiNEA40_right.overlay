@@ -1,4 +1,5 @@
 #include "LiNEA40.dtsi"
+
 &default_transform {
     col-offset = <6>;
 };
@@ -14,13 +15,23 @@
 };
 
 / {
-    trackball_listener {
+    trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
+        status = "okay";
         device = <&trackball>;
 
+        scroller {
+            // ← SCROLL レイヤーの番号に合わせる
+            // roBa と同じなら <4> のままでOK
+            layers = <4>;
+
+            input-processors = <
+                &zip_xy_to_scroll_mapper   // 移動量 → スクロール値
+                &zip_scroll_snap           // 方向スナップ
+            >;
+        };
     };
 };
-
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -57,14 +68,9 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //MOT-D6
-        //automouse-layer = <2>;
-        //snipe-layers = <7>;
-        scroll-layers = <4>;
-        //scroll-layers = <4 5 6>;
-    };
-};
 
-&trackball_listener {
-    status = "okay";
-    device = <&trackball>;
+        // scroll 用に有効にするレイヤー
+        // roBa と同じなら <4> のままでOK（SCROLL マクロと合わせる）
+        scroll-layers = <4>;
+    };
 };
