@@ -1,5 +1,5 @@
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 50
 
 #include <scroll-snap.dtsi>
 #include <input/processors.dtsi>
@@ -24,8 +24,8 @@
     x-threshold = <5 8>;
     y-threshold = <8 5>;
     xy-threshold = <5 8>;
-    require-n-samples = <5>;
-    immediate-snap-threshold = <900>;
+    require-n-samples = <10>;
+    immediate-snap-threshold = <1500>;
     lock-duration-ms = <200>;
     lock-for-next-n-events = <10>;
     idle-reset-timeout-ms = <200>;
