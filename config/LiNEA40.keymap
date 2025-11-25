@@ -1,5 +1,5 @@
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 50
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <scroll-snap.dtsi>
 #include <input/processors.dtsi>
