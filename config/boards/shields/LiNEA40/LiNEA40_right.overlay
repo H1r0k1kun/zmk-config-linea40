@@ -21,13 +21,13 @@
         device = <&trackball>;
 
         scroller {
-            // ← SCROLL レイヤーの番号に合わせる
-            // roBa と同じなら <4> のままでOK
+            // Scroll レイヤー = インデックス 4
             layers = <4>;
 
             input-processors = <
-                &zip_xy_to_scroll_mapper   // 移動量 → スクロール値
-                &zip_scroll_snap           // 方向スナップ
+                &zip_xy_transform INPUT_TRANSFORM_Y_INVERT  // Y 反転
+                &zip_xy_to_scroll_mapper                    // 移動量 → スクロール
+                &zip_scroll_snap                            // スナップ
             >;
         };
     };
