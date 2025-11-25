@@ -25,8 +25,8 @@
             layers = <4>;
 
             input-processors = <
-                &zip_xy_transform INPUT_TRANSFORM_Y_INVERT  // Y 反転
-                &zip_xy_to_scroll_mapper                    // 移動量 → スクロール
+                &zip_xy_transform INPUT_TRANSFORM_Y_INVERT,  // Y 反転
+                &zip_xy_to_scroll_mapper,                    // 移動量 → スクロール
                 &zip_scroll_snap                            // スナップ
             >;
         };
