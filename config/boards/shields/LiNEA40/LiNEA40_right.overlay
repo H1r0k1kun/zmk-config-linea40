@@ -25,9 +25,9 @@
             layers = <4>;
 
             input-processors = <
-                &zip_xy_transform INPUT_TRANSFORM_Y_INVERT,  // Y 反転
-                &zip_xy_to_scroll_mapper,                    // 移動量 → スクロール
-                &zip_scroll_snap                            // スナップ
+                &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_snap
             >;
         };
     };
@@ -70,7 +70,6 @@
         irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //MOT-D6
 
         // scroll 用に有効にするレイヤー
-        // roBa と同じなら <4> のままでOK（SCROLL マクロと合わせる）
         scroll-layers = <4>;
     };
 };
