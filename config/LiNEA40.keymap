@@ -407,10 +407,10 @@
 
         iPad_tcc {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                           &bt3_msol  &kp D  &kp I   &trans          &trans
-&trans  &trans  &trans  &trans  &trans                           &bt4_kd    &kp S  &kp K   &kp LEFT_SHIFT  &trans
-&trans  &trans  &trans  &trans  &trans                           &kp LS(X)  &kp N  &kp J   &trans          &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp ENTER         &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans                            &bt3_msol  &kp D  &kp I   &trans          &trans
+&trans  &trans  &trans  &trans  &trans                            &bt4_kd    &kp S  &kp K   &kp LEFT_SHIFT  &trans
+&trans  &trans  &trans  &trans  &trans                            &kp LS(X)  &kp N  &kp J   &trans          &trans
+&trans  &trans  &trans  &trans  &kp TAB  &trans    &kp BACKSPACE  &kp ENTER         &trans  &trans          &trans
             >;
         };
     };
