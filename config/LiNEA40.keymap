@@ -150,6 +150,11 @@
             bindings = <&kp INT_MUHENKAN>;
             key-positions = <35 10>;
         };
+
+        globe {
+            bindings = <&kp GLOBE>;
+            key-positions = <18 19>;
+        };
     };
 
     behaviors {
@@ -387,7 +392,7 @@
 
         Function {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &kp F10                    &bt3_msol                &kp BACKSPACE   &kp DELETE    &trans           &trans
+&trans  &kp F7  &kp F8  &kp F9  &kp F10                    &bt3_msol                &bt0_mac        &kp DELETE    &trans           &trans
 &trans  &kp F4  &kp F5  &kp F6  &trans                     &bt4_kd                  &mkp MB1        &kp UP_ARROW  &bt1_ipad        &trans
 &trans  &kp F1  &kp F2  &kp F3  &trans                     &kp LS(INTERNATIONAL_1)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &trans
 &trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans                                   &trans        &trans           &trans
@@ -407,10 +412,10 @@
 
         iPad_tcc {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                            &bt3_msol  &kp D  &kp I   &trans          &trans
-&trans  &trans  &trans  &trans  &trans                            &bt4_kd    &kp S  &kp K   &kp LEFT_SHIFT  &trans
-&trans  &trans  &trans  &trans  &trans                            &kp LS(X)  &kp N  &kp J   &trans          &trans
-&trans  &trans  &trans  &trans  &kp TAB  &trans    &kp BACKSPACE  &kp ENTER         &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans                            &bt3_msol  &bt0_mac  &kp I   &trans          &trans
+&trans  &trans  &trans  &trans  &trans                            &bt4_kd    &kp S     &kp K   &kp LEFT_SHIFT  &trans
+&trans  &trans  &trans  &trans  &trans                            &kp LS(X)  &kp N     &kp J   &trans          &trans
+&trans  &trans  &trans  &trans  &kp TAB  &trans    &kp BACKSPACE  &kp ENTER            &trans  &trans          &trans
             >;
         };
     };
