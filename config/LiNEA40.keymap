@@ -334,7 +334,7 @@
 &kp Q         &kp W         &kp E             &kp R                        &kp T                                           &kp Y        &kp U  &kp I      &kp O     &kp P
 &kp A         &kp S         &kp D             &kp F                        &kp G                                           &kp H        &kp J  &lt 4 K    &kp L     &lt 8 MINUS
 &kp Z         &kp X         &kp C             &kp V                        &kp B                                           &kp N        &kp M  &kp COMMA  &kp DOT   &kp SLASH
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 4 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(SLASH)
+&kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 4 INT_HENKAN    &kp BACKSPACE  &lt 5 ENTER         &mkp MB4   &mkp MB5  &lt 7 LS(F12)
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
