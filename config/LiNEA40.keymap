@@ -152,7 +152,7 @@
         };
 
         globe {
-            bindings = <&kp GLOBE>;
+            bindings = <&kp F12>;
             key-positions = <18 19>;
             layers = <0>;
         };
