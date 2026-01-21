@@ -165,7 +165,7 @@
 
         mac_capture {
             bindings = <&kp LG(LS(NUMBER_4))>;
-            key-positions = <31 32 11>;
+            key-positions = <32 11 33>;
             layers = <0>;
         };
     };
