@@ -1,0 +1,401 @@
+layout: {zmk_keyboard: LiNEA40}
+layers:
+  Mac:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - {t: K, h: Scroll}
+  - L
+  - {t: '-', h: iPad_tcc}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - LEFT GUI
+  - LEFT ALT
+  - LEFT CONTROL
+  - {t: INT MUHENKAN, h: LEFT SHIFT}
+  - {t: SPACE, h: Mouse}
+  - {t: INT HENKAN, h: Scroll}
+  - BACKSPACE
+  - {t: ENTER, h: Num}
+  - '&mkp MB4'
+  - '&mkp MB5'
+  - {t: Sft+F12, h: ZMK}
+  iPad:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - {t: K, h: Scroll}
+  - L
+  - {t: '-', h: iPad_tcc}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - LEFT GUI
+  - LEFT ALT
+  - LEFT CONTROL
+  - {t: LANGUAGE 2, h: LEFT SHIFT}
+  - {t: SPACE, h: Mouse}
+  - {t: LANGUAGE 1, h: Scroll}
+  - BACKSPACE
+  - {t: ENTER, h: Num}
+  - '&mkp MB4'
+  - '&mkp MB5'
+  - {t: Sft+/, h: ZMK}
+  Windows:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: Scroll}
+  - S
+  - D
+  - F
+  - G
+  - H
+  - '&mouse_gesture_kp 0 J'
+  - {t: K, h: Scroll}
+  - L
+  - {t: '-', h: Function}
+  - {t: Z, h: LEFT SHIFT}
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - LEFT CONTROL
+  - {t: LEFT ALT, h: '&alt_layer8'}
+  - LEFT GUI
+  - {t: INT MUHENKAN, h: LEFT SHIFT}
+  - {t: SPACE, h: Mouse}
+  - {t: INT HENKAN, h: Scroll}
+  - BACKSPACE
+  - {t: ENTER, h: Num}
+  - '&mkp MB4'
+  - '&mkp MB5'
+  - {t: Sft+/, h: ZMK}
+  Mouse:
+  - ESCAPE
+  - F2
+  - {t: ▽, type: trans}
+  - Gui+LEFT ARROW
+  - Gui+RIGHT ARROW
+  - {t: ▽, type: trans}
+  - BACKSPACE
+  - DELETE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - TAB
+  - '%'
+  - '['
+  - ']'
+  - Sft+8
+  - {t: ▽, type: trans}
+  - '&mkp MB1'
+  - {t: UP ARROW, h: Scroll}
+  - '&mkp MB2'
+  - {t: ▽, type: trans}
+  - LEFT SHIFT
+  - '!'
+  - ''''
+  - \
+  - Sft+9
+  - HOME
+  - LEFT ARROW
+  - DOWN ARROW
+  - RIGHT ARROW
+  - END
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ;
+  - {t: ▽, type: trans}
+  - {t: TAB, type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+HOME
+  - Ctl+END
+  - {t: ▽, type: trans}
+  Scroll:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp MB1'
+  - {type: held}
+  - '&mkp MB2'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gui+LEFT ARROW
+  - Gui+RIGHT ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - INT MUHENKAN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Num:
+  - '-'
+  - '7'
+  - '8'
+  - '9'
+  - +
+  - {t: ▽, type: trans}
+  - BACKSPACE
+  - DELETE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '0'
+  - '4'
+  - '5'
+  - '6'
+  - Sft+;
+  - Gui+\
+  - '&mkp MB1'
+  - UP ARROW
+  - '&mkp MB2'
+  - {t: ▽, type: trans}
+  - {t: '0', h: LEFT SHIFT}
+  - '1'
+  - '2'
+  - '3'
+  - Sft+-
+  - Sft+INTERNATIONAL 1
+  - LEFT ARROW
+  - DOWN
+  - RIGHT ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - .
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - Ctl+LEFT
+  - Ctl+RIGHT
+  - {t: ▽, type: trans}
+  Function:
+  - {t: ▽, type: trans}
+  - F7
+  - F8
+  - F9
+  - F10
+  - '&bt3_msol'
+  - '&bt0_mac'
+  - DELETE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F4
+  - F5
+  - F6
+  - {t: ▽, type: trans}
+  - '&bt4_kd'
+  - '&mkp MB1'
+  - UP ARROW
+  - '&bt1_ipad'
+  - {type: held}
+  - {t: ▽, type: trans}
+  - F1
+  - F2
+  - F3
+  - {t: ▽, type: trans}
+  - Sft+INTERNATIONAL 1
+  - LEFT ARROW
+  - DOWN
+  - RIGHT ARROW
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  ZMK:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bt0_mac'
+  - '&bt1_ipad'
+  - '&bt2_ipad'
+  - '&bt3_msol'
+  - '&bt4_kd'
+  - '0'
+  - '4'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - BT CLR
+  - '1'
+  - '2'
+  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&all_disc'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - '&studio_unlock'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  iPad_tcc:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bt3_msol'
+  - '&bt0_mac'
+  - I
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bt4_kd'
+  - S
+  - K
+  - LEFT SHIFT
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Sft+X
+  - N
+  - J
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - TAB
+  - {t: ▽, type: trans}
+  - BACKSPACE
+  - ENTER
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+combos:
+- p: [16, 17]
+  k: '&mkp MB1'
+  l: [Mac, iPad, Windows]
+- p: [17, 18]
+  k: '&mkp MB2'
+  l: [Mac, iPad, Windows]
+- p: [18, 19]
+  k: F3
+  l: [Mac]
+- p: [35, 10]
+  k: INT MUHENKAN
+- p: [18, 17, 16]
+  k: F12
+  l: [Mac]
+- p: [6, 7]
+  k: Gui+Sft+4
+  l: [Mac]
+- p: [32, 11, 33]
+  k: Gui+Sft+4
+  l: [Mac]
