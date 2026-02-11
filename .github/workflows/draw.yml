@@ -1,63 +1,21 @@
-name: Draw Keymap (PNG & SVG)
+name: Draw Keymap
 on:
   workflow_dispatch:
   push:
     paths:
-      - "config/**/*.keymap"
+      - "config/*.keymap"
+      - "config/*.json"
       - "keymap_drawer.config.yaml"
-
-permissions:
-  contents: write
 
 jobs:
   draw:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          pip install keymap-drawer
-          sudo apt-get install -y librsvg2-bin
-
-      - name: Generate Images
-        run: |
-          mkdir -p img
-          
-          # configフォルダ以下の .keymap ファイルを全て探して処理する
-          find config -name "*.keymap" | while read keymap_file; do
-            echo "Processing: $keymap_file"
-            
-            # ファイル名を取得 (例: LiNEA40)
-            base_name=$(basename "$keymap_file" .keymap)
-            
-            # 1. ZMKファイルを解析してYAMLデータにする (parse)
-            # configファイルがあれば使う、なければデフォルト
-            if [ -f "keymap_drawer.config.yaml" ]; then
-              keymap -c keymap_drawer.config.yaml parse -z "$keymap_file" > "img/${base_name}.yaml"
-            else
-              keymap parse -z "$keymap_file" > "img/${base_name}.yaml"
-            fi
-            
-            # 2. YAMLからSVG画像を生成する (draw)
-            if [ -f "keymap_drawer.config.yaml" ]; then
-              keymap -c keymap_drawer.config.yaml draw "img/${base_name}.yaml" > "img/${base_name}.svg"
-            else
-              keymap draw "img/${base_name}.yaml" > "img/${base_name}.svg"
-            fi
-            
-            # 3. SVGをPNGに変換する (高さ2000pxの高画質)
-            rsvg-convert -h 2000 "img/${base_name}.svg" > "img/${base_name}.png"
-            
-            echo "Generated ${base_name}.svg and ${base_name}.png"
-          done
-
-      - name: Commit results
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update keymap images (SVG & PNG)"
-          file_pattern: "img/*"
+    # ↓ ここを修正しました
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "img"
+      parse_args: ""
+      draw_args: ""
