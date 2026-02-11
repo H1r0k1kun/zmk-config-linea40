@@ -7,15 +7,40 @@ on:
       - "config/*.json"
       - "keymap_drawer.config.yaml"
 
+permissions:
+  contents: write
+
 jobs:
   draw:
-    # ↓ ここを修正しました
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
-    permissions:
-      contents: write
-    with:
-      keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer.config.yaml"
-      output_folder: "img"
-      parse_args: ""
-      draw_args: ""
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. SVGを生成する (Keymap Drawer実行)
+      - name: Generate SVG
+        uses: caksoylar/keymap-drawer-action@v1
+        with:
+          keymap_patterns: "config/*.keymap"
+          config_path: "keymap_drawer.config.yaml"
+          output_folder: "img"
+          # ここで commit はまだしない
+          amend_commit: false 
+          commit_message: "" 
+
+      # 2. 変換ツールをインストール
+      - name: Install SVG converter
+        run: sudo apt-get install -y librsvg2-bin
+
+      # 3. SVGをPNGに変換する (解像度高めに設定)
+      - name: Convert SVG to PNG
+        run: |
+          for f in img/*.svg; do
+            # 拡張子を .png に変えて保存 (DPIなどを調整可能)
+            rsvg-convert -h 2000 "$f" > "${f%.svg}.png"
+          done
+
+      # 4. まとめてコミットする
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update keymap images (SVG & PNG)"
+          file_pattern: "img/*"
