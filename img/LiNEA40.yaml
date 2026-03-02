@@ -391,7 +391,7 @@ combos:
 - p: [35, 10]
   k: INT MUHENKAN
 - p: [18, 17, 16]
-  k: F12
+  k: F15
   l: [Mac]
 - p: [6, 7]
   k: Gui+Sft+4
