@@ -400,5 +400,5 @@ combos:
   k: Gui+Sft+4
   l: [Mac]
 - p: [26, 27]
-  k: '*'
+  k: Sft+'
   l: [Mac]
