@@ -170,7 +170,7 @@
         };
 
         ast {
-            bindings = <&kp ASTRK>;
+            bindings = <&kp LS(APOS)>;
             key-positions = <26 27>;
             layers = <0>;
         };
