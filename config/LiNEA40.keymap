@@ -168,6 +168,12 @@
             key-positions = <32 11 33>;
             layers = <0>;
         };
+
+        ast {
+            bindings = <&kp ASTRK>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
     };
 
     behaviors {
