@@ -349,6 +349,13 @@
             bindings = <&kp LS(APOS) &kp SPACE>;
             label = "NOTEPLAN_TASK";
         };
+
+        noteplan_taskcomp: noteplan_taskcomp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NOTEPLAN_TASKCOMP";
+        };
     };
 
     keymap {
