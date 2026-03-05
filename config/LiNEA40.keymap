@@ -174,6 +174,12 @@
             key-positions = <26 27>;
             layers = <0>;
         };
+
+        taskcomp {
+            bindings = <&noteplan_taskcomp>;
+            key-positions = <37 16 17>;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -353,7 +359,14 @@
         noteplan_taskcomp: noteplan_taskcomp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_GUI>,
+                <&macro_tap>,
+                <&mkp MB1>,
+                <&macro_release>,
+                <&kp LEFT_GUI>;
+
             label = "NOTEPLAN_TASKCOMP";
         };
     };
