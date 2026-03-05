@@ -364,7 +364,7 @@ path.combo {
 </g>
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="546" y="127" width="28" height="26" class="combo"/>
-<text x="560" y="140" class="combo tap">Sft+&#x27;</text>
+<text x="560" y="140" class="combo tap"><tspan style="font-size: 64%">&amp;noteplan_…</tspan></text>
 </g>
 </g>
 </g>

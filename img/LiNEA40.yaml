@@ -400,5 +400,5 @@ combos:
   k: Gui+Sft+4
   l: [Mac]
 - p: [26, 27]
-  k: Sft+'
+  k: '&noteplan_task'
   l: [Mac]
