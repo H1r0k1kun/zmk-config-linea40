@@ -402,3 +402,6 @@ combos:
 - p: [26, 27]
   k: '&noteplan_task'
   l: [Mac]
+- p: [37, 16, 17]
+  k: '&noteplan_taskcomp'
+  l: [Mac]
