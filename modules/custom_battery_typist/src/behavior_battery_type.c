@@ -20,9 +20,9 @@
 #include <zmk/keymap.h>
 
 #if IS_ENABLED(CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING)
+
 #include <zmk/split/bluetooth/central.h>
 #endif
-
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
