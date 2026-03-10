@@ -334,7 +334,7 @@ layers:
   - '&bootloader'
   - '&studio_unlock'
   - {t: ▽, type: trans}
-  - '&battery_type'
+  - {t: ▽, type: trans}
   - {type: held}
   iPad_tcc:
   - {t: ▽, type: trans}
