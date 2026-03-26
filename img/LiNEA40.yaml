@@ -293,7 +293,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&battery_type'
   ZMK:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
