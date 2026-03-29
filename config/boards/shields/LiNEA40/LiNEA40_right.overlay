@@ -1,5 +1,6 @@
 #include "LiNEA40.dtsi"
 #include <dt-bindings/zmk/input_transform.h> 
+#include <zephyr/dt-bindings/input/input-event-codes.h> 
 #include <input/processors/runtime-input-processor.dtsi>
 
 &default_transform {
@@ -22,7 +23,6 @@
         status = "okay";
         device = <&trackball>;
 　　    input-processors = <&mouse_runtime_input_processor>;
-};
 
         scroller {
             // Scroll レイヤー = インデックス 4
@@ -34,7 +34,6 @@
                 &zip_wheel_scaler 1 4   // ★ ここでスクロール量を 1/2 に
                 &zip_scroll_snap
 　　　　　　　　　 &scroll_runtime_input_processor
-
             >;
         };
     };
