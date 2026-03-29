@@ -22,18 +22,17 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball>;
-　　    input-processors = <&mouse_runtime_input_processor>;
+        input-processors = <&mouse_runtime_input_processor>;
 
         scroller {
-            // Scroll レイヤー = インデックス 4
             layers = <4>;
 
             input-processors = <
                 &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
                 &zip_xy_to_scroll_mapper
-                &zip_wheel_scaler 1 4   // ★ ここでスクロール量を 1/2 に
+                &zip_wheel_scaler 1 4
                 &zip_scroll_snap
-　　　　　　　　　 &scroll_runtime_input_processor
+                &scroll_runtime_input_processor
             >;
         };
     };
