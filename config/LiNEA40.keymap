@@ -190,7 +190,6 @@
     };
 
     behaviors {
-
         re_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
@@ -455,10 +454,10 @@
 
         ZMK {
             bindings = <
-&trans      &trans        &trans        &trans        &trans                         &bt0_mac        &bt1_ipad     &bt2_ipad     &bt3_msol      &bt4_kd
-&kp N0      &kp NUMBER_4  &trans        &trans        &trans                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4
-&bt BT_CLR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans                         &trans          &trans        &trans        &trans         &all_disc
-&trans      &trans        &trans        &trans        &trans  &trans    &bootloader  &studio_unlock                &trans        &trans         &trans
+&trans      &trans        &trans        &trans        &trans                         &bt0_mac        &bt1_ipad     &bt2_ipad     &bt3_msol     &bt4_kd
+&kp N0      &kp NUMBER_4  &trans        &trans        &trans                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&bt BT_CLR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans                         &trans          &trans        &trans        &trans        &all_disc
+&trans      &trans        &trans        &trans        &trans  &trans    &bootloader  &studio_unlock                &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
@@ -469,7 +468,7 @@
 &trans  &trans  &trans  &trans  &trans                            &bt3_msol  &bt0_mac  &kp I   &trans          &trans
 &trans  &trans  &trans  &trans  &trans                            &bt4_kd    &kp S     &kp K   &kp LEFT_SHIFT  &trans
 &trans  &trans  &trans  &trans  &trans                            &kp LS(X)  &kp N     &kp J   &trans          &trans
-&trans  &trans  &trans  &trans  &kp TAB  &trans    &kp BACKSPACE  &kp ENTER            &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &kp TAB  &trans    &kp BACKSPACE  &kp ENTER            &trans  &trans          &battery_type
             >;
         };
     };
