@@ -377,7 +377,7 @@ layers:
   - ENTER
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&battery_type'
 combos:
 - p: [16, 17]
   k: '&mkp MB1'
