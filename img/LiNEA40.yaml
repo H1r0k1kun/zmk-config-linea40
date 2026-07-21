@@ -355,7 +355,7 @@ layers:
   - '&bt4_kd'
   - S
   - K
-  - LEFT SHIFT
+  - '&bt2_ipad'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
