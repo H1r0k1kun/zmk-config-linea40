@@ -70,6 +70,25 @@
 
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
+
+        /*
+         * ディープスリープからキー押下で復帰するために必須。
+         *
+         * ZMK は起動時にキーマトリクスを起床源として登録するが、その条件が
+         * pm_device_wakeup_is_capable()（physical_layouts.c:475）。
+         * この capable フラグは devicetree の wakeup-source プロパティでしか立たない
+         * （Zephyr include/zephyr/pm/device.h の Z_PM_DEVICE_FLAGS）。
+         *
+         * この一行がないと起床源として登録されず、スリープ時に停止対象になり、
+         * kscan_gpio_matrix.c の PM_DEVICE_ACTION_SUSPEND が
+         * 全ての row/col ピンを GPIO_DISCONNECTED にしてしまうため、
+         * キーを押しても復帰できなくなる。
+         *
+         * ZMK 公式の lily58 / cradio / elephant42 等はいずれもこれを書いている。
+         */
+
+        wakeup-source;
+
         diode-direction = "col2row";
 
         row-gpios
