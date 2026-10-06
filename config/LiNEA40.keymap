@@ -275,6 +275,17 @@
             layers = <0>;
         };
 
+        // Windows 版の app_switch（2026-10-06 追加）。
+        // 同じ L + - の同時押しで、Windows の「3本指で上にスワイプ」と同じタスクビューを開く。
+        // コンボは「いちばん上で有効なレイヤー」で絞り込まれる（combo.c:128-153）ので、
+        // Mac（0）では上の F3、Windows（2）ではこちらだけが候補になり、取り合わない。
+        app_switch_win {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <18 19>;
+            timeout-ms = <100>;
+            layers = <2>;
+        };
+
         muhenkan {
             bindings = <&kp INT_MUHENKAN>;
             key-positions = <35 10>;
