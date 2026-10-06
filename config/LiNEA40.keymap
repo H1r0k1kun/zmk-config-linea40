@@ -109,6 +109,128 @@
     };
 };
 
+// ---------------------------------------------------------------------------
+// ズームボタン（2026-10-06 追加）
+//
+// 1回押すと1段階だけズームする。配置は ZMK Studio で各自行う
+// （下の display-name が Studio の一覧に出る名前）。
+//
+// ■ Windows: 「Ctrl を押しながらホイールを1ノッチ」を出す
+//   キーボードショートカット（Ctrl + = 等）は使わない。
+//   - JIS 配列の OS では HID の EQUAL が「^」として届き、Ctrl + ^ になる
+//   - テンキーの + / - は Excel でセルの挿入・削除になる
+//   - Word には既定のズームショートカットが無い
+//   Ctrl + ホイールなら、ブラウザ・Excel・Word・エクスプローラーすべてで
+//   アプリ自身の最小単位で1段階ズームする。
+//
+// ■ Mac: ⌘ + テンキーの + / -
+//   Mac の Ctrl + ホイールは画面全体の拡大（アクセシビリティ）でアプリのズームではない。
+//   テンキーの + / - は JIS / US の配列に関係なく「+」「-」の文字になるため、
+//   アプリの「⌘+」「⌘-」に一致する。
+//   予備として ⌘ + Shift + ;（JIS 配列で「+」を出す組み合わせ）も用意した。
+//   実機でどちらが効くか確認できたら、効かなかった方は消す。
+//
+// ■ C_AC_ZOOM_IN / C_AC_ZOOM_OUT（HID の「ズーム」キー）は使わない
+//   ZMK のキーコード表（docs/src/data/hid.js:7407-7465）で動作確認済みなのは
+//   Linux のみ。Windows / macOS / iOS は未確認、Android は非対応。
+//   以前これを置いて反応しなかったのはこのため。
+// ---------------------------------------------------------------------------
+
+/ {
+    behaviors {
+        // ズーム専用のホイール。既存の &msc とは別にする。
+        // &msc には独自の速度設定と、Function レイヤーで3倍にする倍率がかかっているため、
+        // それを通すと1回あたりの量が決まらない。
+        //
+        // 1ノッチちょうどにする仕組み（behavior_input_two_axis.c:111-153 / 175-230）:
+        //   押した瞬間には何も出さず、trigger-period-ms 後に初めて
+        //   「速度 × trigger-period-ms / 1000」だけ出す。加速（acceleration-exponent）は 0。
+        //   速度 10 × 100ms / 1000 = 1.0 ＝ ホイール値 1。
+        //   次は 200ms 後なので、その前（150ms）に離せば1回だけで止まる。
+        // ホイール値 1 ＝ Windows の1ノッチ（ZMK_POINTING_SMOOTH_SCROLLING が無効のため
+        // 解像度倍率が無く、1 がそのまま1ノッチとして扱われる）。
+        zoom_wheel: zoom_wheel {
+            compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            // Studio の一覧にも出るが、直接キーに置くと Ctrl なしの単発スクロールになる。置かないこと。
+            display-name = "(internal - do not assign) Zoom wheel";
+            x-input-code = <INPUT_REL_HWHEEL>;
+            y-input-code = <INPUT_REL_WHEEL>;
+            trigger-period-ms = <100>;
+            time-to-max-speed-ms = <0>;
+            acceleration-exponent = <0>;
+        };
+
+        // macro_wait_time は「それ以降の各ステップの後に入る待ち時間」を変える
+        // （behavior_macro.c:22-30）。マクロは1本の順番待ちに積まれるので、
+        // 連打しても前の1回が終わってから次が動き、Ctrl やホイールが重ならない。
+        //
+        // 各ステップの後に入る待ち:
+        //   Ctrl 押下 → 30ms → ホイール押下 → 150ms（＝ホイールを押し続ける時間）→
+        //   ホイール解放 → 30ms → Ctrl 解放
+        // ホイールの値は押してから 100ms 後に1回だけ出るので、Ctrl の約130ms後に届く。
+        // キーボードとマウスの送信は別々の待ち列（hog.c:288 / hog.c:394）なので、
+        // この間隔で「Ctrl が先に届く」順番を守る。
+        zoom_in_win: zoom_in_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Zoom In (Win)";
+            bindings
+                = <&macro_wait_time 30>
+                , <&macro_press &kp LCTRL>
+                , <&macro_wait_time 150>
+                , <&macro_press &zoom_wheel MOVE_Y(10)>
+                , <&macro_wait_time 30>
+                , <&macro_release &zoom_wheel MOVE_Y(10)>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        zoom_out_win: zoom_out_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Zoom Out (Win)";
+            bindings
+                = <&macro_wait_time 30>
+                , <&macro_press &kp LCTRL>
+                , <&macro_wait_time 150>
+                , <&macro_press &zoom_wheel MOVE_Y(-10)>
+                , <&macro_wait_time 30>
+                , <&macro_release &zoom_wheel MOVE_Y(-10)>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        zoom_in_mac: zoom_in_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Zoom In (Mac)";
+            bindings = <&macro_tap &kp LG(KP_PLUS)>;
+        };
+
+        zoom_out_mac: zoom_out_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Zoom Out (Mac)";
+            bindings = <&macro_tap &kp LG(KP_MINUS)>;
+        };
+
+        // 予備: ⌘ + Shift + ;
+        // JIS 配列では「+」は Shift + ; で出る。⌘ + ; だけだと「⌘;」になり ⌘+ に一致しない。
+        zoom_in_mac_alt: zoom_in_mac_alt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "Zoom In (Mac alt)";
+            bindings = <&macro_tap &kp LG(LS(SEMI))>;
+        };
+    };
+
+    zoom_wheel_input_listener: zoom_wheel_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&zoom_wheel>;
+    };
+};
+
 &mouse_gesture_kp {
     tapping-term-ms = <200>;
     quick-tap-ms = <250>;
