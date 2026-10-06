@@ -39,7 +39,9 @@
 | `LiNEA40_right.conf` / `LiNEA40_right.overlay` のみ | **右だけ** |
 | `LiNEA40_left.conf` / `LiNEA40_left.overlay` のみ | **左だけ** |
 | 左右の conf / overlay の両方 | **両方** |
-| 共有ファイルを含む → `config/LiNEA40.keymap` / `config/LiNEA40.json` / `config/west.yml` / `build.yaml` / `LiNEA40.dtsi` / `modules/` | **両方** |
+| `config/LiNEA40.keymap` のみ（キー配置・マクロ・hold-tap・マウス動作など） | **右だけ** |
+| `config/LiNEA40.keymap` で **左でも実行される動作**を足し引き・移動した（下記） | **両方** |
+| 共有ファイルを含む → `config/LiNEA40.json` / `config/west.yml` / `build.yaml` / `LiNEA40.dtsi` / `modules/` | **両方** |
 
 4. **`.uf2` を渡すメッセージに「今回は右だけ」等を明記する**
 
@@ -50,6 +52,18 @@
 
 5. **handoff.md の「最後に書き込んだコミット」を更新する**
    （これがないと次回の差分が取れない。書き込み完了の報告を受けたら必ず更新する）
+
+### keymap が「右だけ」でよい理由（2026-10-06 確認）
+
+- キーマップを処理する `keymap.c` は**親機（右）にしか組み込まれない**
+  （ZMK v0.2.1 `app/CMakeLists.txt:47-76`）。左は押されたキー位置を右へ送るだけ
+- 左の `.uf2` 自体は keymap 変更でバイナリが変わる（behavior の DT 定義が左にも入るため）が、
+  左でそれが呼ばれることはない。**「.uf2 が変わった＝書き込みが必要」ではない**
+- 例外＝**左でも実行される動作**（behavior の locality が EVENT_SOURCE / GLOBAL のもの）:
+  `&bootloader` / `&sys_reset`（押した側で実行）、`&soft_off` / `&rgb_ug` / `&bl` / `&ext_power`（両側で実行）。
+  これらを足し引き・移動したときだけ両方に書き込む
+- 2026-10-06 まで表は「keymap → 両方」で、ズームボタン追加時に左の不要な書き込みを頼みかけた
+  （開発者の指摘で気づいた）
 
 ### 注意
 
