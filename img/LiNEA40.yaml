@@ -388,6 +388,9 @@ combos:
 - p: [18, 19]
   k: F3
   l: [Mac]
+- p: [18, 19]
+  k: Gui+TAB
+  l: [Windows]
 - p: [35, 10]
   k: INT MUHENKAN
 - p: [18, 17, 16]
