@@ -271,7 +271,7 @@ layers:
   - '&bt4_kd'
   - '&mkp MB1'
   - UP ARROW
-  - '&bt1_ipad'
+  - '&bt2_ipad'
   - {type: held}
   - {t: ▽, type: trans}
   - F1
