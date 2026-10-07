@@ -605,7 +605,7 @@
         Function {
             bindings = <
 &trans  &kp F7  &kp F8  &kp F9  &kp F10                    &bt3_msol                &bt0_mac        &kp DELETE    &trans           &trans
-&trans  &kp F4  &kp F5  &kp F6  &trans                     &bt4_kd                  &mkp MB1        &kp UP_ARROW  &bt1_ipad        &trans
+&trans  &kp F4  &kp F5  &kp F6  &trans                     &bt4_kd                  &mkp MB1        &kp UP_ARROW  &bt2_ipad        &trans
 &trans  &kp F1  &kp F2  &kp F3  &trans                     &kp LS(INTERNATIONAL_1)  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &trans
 &trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans                                   &zoom_in_win  &zoom_out_win  &battery_type
             >;
