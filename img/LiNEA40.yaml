@@ -391,6 +391,9 @@ combos:
 - p: [18, 19]
   k: Gui+TAB
   l: [Windows]
+- p: [18, 19]
+  k: '&ipad_app_switcher'
+  l: [iPad]
 - p: [35, 10]
   k: INT MUHENKAN
 - p: [18, 17, 16]
