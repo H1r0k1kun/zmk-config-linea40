@@ -223,6 +223,20 @@
             display-name = "Zoom In (Mac alt)";
             bindings = <&macro_tap &kp LG(LS(SEMI))>;
         };
+
+        // iPad のアプリスイッチャー（🌐 + ↑）。🌐 は iPad 側で Caps Lock に割り当てる前提。
+        // 詳細はコンボ app_switch_ipad のコメント参照。
+        ipad_app_switcher: ipad_app_switcher {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            display-name = "iPad App Switcher";
+            bindings
+                = <&macro_wait_time 30>
+                , <&macro_press &kp CAPS>
+                , <&macro_tap &kp UP_ARROW>
+                , <&macro_release &kp CAPS>
+                ;
+        };
     };
 
     zoom_wheel_input_listener: zoom_wheel_input_listener {
@@ -284,6 +298,19 @@
             key-positions = <18 19>;
             timeout-ms = <100>;
             layers = <2>;
+        };
+
+        // iPad 版の app_switch（2026-10-13 追加）。
+        // 同じ L + - の同時押しで、iPad の「下から上にスワイプして止める」と同じアプリスイッチャーを開く。
+        // iPad のキー操作では 🌐（Globe）+ ↑。🌐 は Apple 純正キーボード専用のキーなので、
+        // iPad 側で「設定 → 一般 → キーボード → ハードウェアキーボード → 修飾キー」の
+        // Caps Lock を 🌐 Globe に割り当て、キーボードからは Caps Lock + ↑ を送る（&ipad_app_switcher）。
+        // ※iPad 側の設定が無いと Caps Lock が入るだけになる（もう一度押せば戻る）。
+        app_switch_ipad {
+            bindings = <&ipad_app_switcher>;
+            key-positions = <18 19>;
+            timeout-ms = <100>;
+            layers = <1>;
         };
 
         muhenkan {
